@@ -1,0 +1,63 @@
+/* Hamburger Menu Styling */
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #66e8ff;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #56e6ff;
+  color: white;
+}
+
+/* Main Body Styling */
+.main-body {
+  background-color: #b4eaff;
+  padding: 20px;
+  font-family: Italiana, 'Hello Bride Script', 'Times New Roman', Times, serif;
+  align-self: center;
+}
+
+.body-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.body-title h1 {
+  font-size: 2.5em;
+  color: #333;
+}
