@@ -4,7 +4,7 @@
 
 .header-container {
   position: relative;
-
+  height: 100%;
 }
 
 .header-background {
@@ -19,10 +19,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #e4e4e4;   /* lighter grey header bar */
-  padding: 10px 20px;
+  background-color: rgba(228, 228, 228, 0.75);   /* lighter grey, slightly transparent */
+  backdrop-filter: blur(4px);   /* keeps text/content behind it from looking muddy when scrolled */
+  padding: clamp(6px, 2vw, 10px) clamp(12px, 4vw, 20px);
   position: relative;
-  opacity: 0.7;
 }
 
 .logo-link {
@@ -31,16 +31,15 @@
 }
 
 .wedding-logo {
-  max-height: 70px;
+  max-height: clamp(32px, 9vw, 45px);   /* scales down on narrow screens */
   width: auto;
 }
 
-
 /* Hamburger button */
 .hamburger {
-  width: 60px;
-  height: 60px;
-  background-color: #7a7a7a;   /* grey button background */
+  width: clamp(34px, 9vw, 42px);
+  height: clamp(34px, 9vw, 42px);
+  background-color: rgba(122, 122, 122, 0.85);   /* grey button, slightly transparent */
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -48,20 +47,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: clamp(3px, 1vw, 5px);
   padding: 0;
+  flex-shrink: 0;   /* prevents the button from getting squished next to the logo */
   transition: background-color 0.2s ease;
-  opacity: 1.0;
 }
 
 .hamburger:hover,
 .hamburger:focus-visible {
-  background-color: #5f5f5f;
+  background-color: rgba(95, 95, 95, 0.9);
 }
 
 .hamburger span {
   display: block;
-  width: 22px;
+  width: clamp(16px, 5vw, 22px);
   height: 3px;
   border-radius: 2px;
   background-color: #ffffff;   /* white bars inside the grey button */
@@ -87,21 +86,22 @@
 .nav-links {
   position: absolute;
   top: 100%;
-  left: 20px;
+  left: clamp(10px, 4vw, 20px);
   margin-top: 8px;
   background-color: #f5f5f5;
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  min-width: 160px;
+  min-width: clamp(140px, 40vw, 160px);
+  max-width: 90vw;   /* never runs off the edge of very narrow screens */
   z-index: 10;
 }
 
 .nav-links a {
   color: #333333;
-  padding: 12px 20px;
+  padding: clamp(10px, 3vw, 12px) clamp(14px, 5vw, 20px);
   text-decoration: none;
-  font-size: 16px;
+  font-size: clamp(15px, 4vw, 16px);
   display: block;
 }
 
