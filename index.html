@@ -10,31 +10,34 @@
 </head>
 
 <header>
-    <!-- Code assetance from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_mobile_navbar -->
+    <!-- Code assistance from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_mobile_navbar -->
 <div class="topnav">
-  <a href="index.html" class="active"> <img src="images/logo.PNG" alt="A&E" class="wedding-logo"></a>
-  
+  <a href="index.html" class="logo-link"> <img src="images/logo.PNG" alt="A&E" class="wedding-logo"></a>
+
+  <!-- Hamburger button (pure CSS bars, no icon font needed) -->
+  <button class="hamburger" onclick="myFunction()" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
   <!-- Navigation links (hidden by default) -->
-  <div id="myLinks">
+  <div id="myLinks" class="nav-links">
     <a href="rsvp.html">RSVP</a>
     <a href="venue.html">Venue</a>
     <a href="about-us.html">About Us</a>
   </div>
-
-  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
 </div>
 
 <script>
 function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
+  var links = document.getElementById("myLinks");
+  var btn = document.querySelector(".hamburger");
+  var isOpen = links.style.display === "block";
+
+  links.style.display = isOpen ? "none" : "block";
+  btn.classList.toggle("open", !isOpen);
+  btn.setAttribute("aria-expanded", String(!isOpen));
 }
 </script>
 
