@@ -9,15 +9,17 @@
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 
-<header>
+<body>
 
-  <div class="header-container">
-    <div class="header-background-div">
-      <img class="header-background" src="images/Ethan-and-Ava.jpg" alt="Ethan preposing to Ava with Biltmore house in the background with A&E logo next to it">
-    </div>
+  <!-- Hero image with the nav bar layered on top of it -->
+  <div class="hero-wrapper">
+    <img class="hero-image" src="images/Ethan-and-Ava.jpg" alt="Ethan preposing to Ava with Biltmore house in the background with A&E logo next to it"> 
+
+    <header>
       <!-- Code assistance from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_mobile_navbar -->
       <div class="topnav">
-        
+       
+
         <!-- Hamburger button (pure CSS bars, no icon font needed) -->
         <button class="hamburger" onclick="myFunction()" aria-label="Toggle navigation menu" aria-expanded="false">
           <span></span>
@@ -32,34 +34,30 @@
           <a href="about-us.html">About Us</a>
         </div>
       </div>
+    </header>
   </div>
 
+  <script>
+  function myFunction() {
+    var links = document.getElementById("myLinks");
+    var btn = document.querySelector(".hamburger");
+    var isOpen = links.style.display === "block";
 
+    links.style.display = isOpen ? "none" : "block";
+    btn.classList.toggle("open", !isOpen);
+    btn.setAttribute("aria-expanded", String(!isOpen));
+  }
+  </script>
 
-<script>
-function myFunction() {
-  var links = document.getElementById("myLinks");
-  var btn = document.querySelector(".hamburger");
-  var isOpen = links.style.display === "block";
-
-  links.style.display = isOpen ? "none" : "block";
-  btn.classList.toggle("open", !isOpen);
-  btn.setAttribute("aria-expanded", String(!isOpen));
-}
-</script>
-
-</header>
-
-<body class="main-body">
-  <div class="body-title">
-    <h1>Ava and Ethan's Wedding</h1>
-  </div>
-
-  <div class="body-content">
-    <p>Welcome to our wedding website! This site will contain all information you will need regarding the wedding! 
-      Here you can find links to RSVP, important dates, venue details and more! 
-    </p>
-  </div>
+  <!-- Page content starts here, right after the hero image ends -->
+  <main class="main-body">
+    <div class="body-title">
+      <h1>Ava & Ethan's Wedding</h1>
+    </div>
+    <div class="intro-paragraph">
+      <p>Welcome to our wedding website! This site will contain all information you will need regarding the wedding! Here you can find links to RSVP, important dates, venue details, and more!</p>
+    </div>
+  </main>
 
 </body>
 </html>

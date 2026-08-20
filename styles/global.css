@@ -1,28 +1,37 @@
 /* ==========================================================
-   Header / Hamburger Menu Styling
+   Hero Image
    ========================================================== */
 
-.header-container {
-  position: relative;
-  height: 100%;
-}
-
-.header-background {
-  position: absolute;
-  
-
-  height: auto;
+.hero-wrapper {
+  position: relative;             /* anchors the absolutely-positioned header inside it */
   width: 100%;
+  height: clamp(320px, 60vh, 600px);   /* scales with viewport, floor/ceiling so it's never too short or too tall */
+  overflow: hidden;
 }
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fills the box without distorting the image */
+  display: block;
+}
+
+/* ==========================================================
+   Header / Hamburger Menu Styling
+   ========================================================== */
 
 .topnav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: rgba(228, 228, 228, 0.75);   /* lighter grey, slightly transparent */
-  backdrop-filter: blur(4px);   /* keeps text/content behind it from looking muddy when scrolled */
+  backdrop-filter: blur(4px);   /* keeps the image behind it from looking muddy through the transparency */
   padding: clamp(6px, 2vw, 10px) clamp(12px, 4vw, 20px);
-  position: relative;
+  position: fixed;   /* pins the nav to the viewport so it stays put while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;   /* high enough to stay above the hero image AND the page content below it */
 }
 
 .logo-link {
@@ -117,6 +126,7 @@
 .main-body {
   background-color: #ffffff;
   padding: 20px;
+  padding-top: clamp(60px, 12vw, 80px);   /* reserves space so the fixed nav never covers this content */
   font-family: Italiana, 'Hello Bride Script', 'Times New Roman', Times, serif;
   align-self: center;
 }
