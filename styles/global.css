@@ -2,6 +2,19 @@
    Header / Hamburger Menu Styling
    ========================================================== */
 
+.header-container {
+  position: relative;
+
+}
+
+.header-background {
+  position: absolute;
+  
+
+  height: auto;
+  width: 100%;
+}
+
 .topnav {
   display: flex;
   align-items: center;
@@ -9,6 +22,7 @@
   background-color: #e4e4e4;   /* lighter grey header bar */
   padding: 10px 20px;
   position: relative;
+  opacity: 0.7;
 }
 
 .logo-link {
@@ -20,6 +34,7 @@
   max-height: 70px;
   width: auto;
 }
+
 
 /* Hamburger button */
 .hamburger {
@@ -36,6 +51,7 @@
   gap: 5px;
   padding: 0;
   transition: background-color 0.2s ease;
+  opacity: 1.0;
 }
 
 .hamburger:hover,
@@ -71,7 +87,7 @@
 .nav-links {
   position: absolute;
   top: 100%;
-  right: 20px;
+  left: 20px;
   margin-top: 8px;
   background-color: #f5f5f5;
   border-radius: 6px;
