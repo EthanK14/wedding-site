@@ -4,44 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Site</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/fonts.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
-<!-- Fonts to use: Italiana, Hello Bride Script -->
-<header>
-
-    <!-- Code assetance from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_mobile_navbar -->
-<div class="topnav">
-  <a href="index.html" class="active"> <img src="images/logo.PNG" alt="A&E" class="wedding-logo"></a>
-  <!-- Navigation links (hidden by default) -->
-  <div id="myLinks">
-    <a href="rsvp.html">RSVP</a>
-    <a href="venue.html">Venue</a>
-    <a href="about-us.html">About Us</a>
-  </div>
-  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-</script>
-
-</header>
 
 <body>
-    
-    
-    <h1>Welcome to Our Wedding Site</h1>
 
-    <p>Testing site</p>
+  <!-- Hero image with the nav bar layered on top of it -->
+  <div class="hero-wrapper">
+    <img class="hero-image" src="images/Ethan-and-Ava.jpg" alt="Ethan preposing to Ava with Biltmore house in the background with A&E logo next to it"> 
+
+    <header>
+      <!-- Code assistance from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_mobile_navbar -->
+      <div class="topnav">
+       
+
+        <!-- Hamburger button (pure CSS bars, no icon font needed) -->
+        <button class="hamburger" onclick="myFunction()" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation links (hidden by default) -->
+        <div id="myLinks" class="nav-links">
+          <a href="rsvp.html">RSVP</a>
+          <a href="venue.html">Venue</a>
+          <a href="about-us.html">About Us</a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <script>
+  function myFunction() {
+    var links = document.getElementById("myLinks");
+    var btn = document.querySelector(".hamburger");
+    var isOpen = links.style.display === "block";
+
+    links.style.display = isOpen ? "none" : "block";
+    btn.classList.toggle("open", !isOpen);
+    btn.setAttribute("aria-expanded", String(!isOpen));
+  }
+  </script>
+
+  <!-- Page content starts here, right after the hero image ends -->
+  <main class="main-body">
+    <div class="body-title">
+      <h1>Venue Information and Things in Spartanburg</h1>
+    </div>
+    <div class="intro-paragraph">
+      <h2>Indigo Hall & Events</h2>
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6540.56483580485!2d-81.93750372473477!3d34.94952956982202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885775f5ad95d3b5%3A0x85c5f02ae547269f!2sIndigo%20Hall%20%26%20Events!5e0!3m2!1sen!2sus!4v1790041330899!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <h3>Parking Information</h3>
+      <p>Parking after 5:00 PM on Mon-Fri and all day on Sat. and Sun. is available at no charge in the QS/1 parking deck on Ezell Street, the Redsail (QS/1) parking lot on Daniel Morgan Avenue and the Magnolia Street Garage. Surrounding street parking is also available at no charge on Sat. and Sun. Time restrictions are strictly enforced during business hours for street parking on Mon.-Fri. Paid parking is available in the Magnolia Street Garage during normal business hours on Mon.-Fri.</p>
+    </div>
+  </main>
+
 </body>
 </html>
