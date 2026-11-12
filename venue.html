@@ -11,43 +11,8 @@
 
 <body>
 
-  <!-- Hero image with the nav bar layered on top of it -->
-  <div class="hero-wrapper">
-    <img class="hero-image" src="images/Ethan-and-Ava.jpg" alt="Ethan preposing to Ava with Biltmore house in the background with A&E logo next to it"> 
-
-    <header>
-      <!-- Code assistance from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_mobile_navbar -->
-      <div class="topnav">
-       
-
-        <!-- Hamburger button (pure CSS bars, no icon font needed) -->
-        <button class="hamburger" onclick="myFunction()" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <!-- Navigation links (hidden by default) -->
-        <div id="myLinks" class="nav-links">
-          <a href="rsvp.html">RSVP</a>
-          <a href="venue.html">Venue</a>
-          <a href="about-us.html">About Us</a>
-        </div>
-      </div>
-    </header>
-  </div>
-
-  <script>
-  function myFunction() {
-    var links = document.getElementById("myLinks");
-    var btn = document.querySelector(".hamburger");
-    var isOpen = links.style.display === "block";
-
-    links.style.display = isOpen ? "none" : "block";
-    btn.classList.toggle("open", !isOpen);
-    btn.setAttribute("aria-expanded", String(!isOpen));
-  }
-  </script>
+    <div id="site-header"></div>
+  <script src="header.js" defer></script>
 
   <!-- Page content starts here, right after the hero image ends -->
   <main class="main-body">
